@@ -1,7 +1,11 @@
 import logging
+import sys
 
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s'
-)
-logger = logging.getLogger(__name__)
+logger = logging.getLogger('bark-client-logger')
+
+logger.setLevel(logging.INFO)
+fh = logging.StreamHandler(stream=sys.stderr)
+
+fh.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
+fh.setLevel(logging.INFO)
+logger.addHandler(fh)

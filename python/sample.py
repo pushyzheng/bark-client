@@ -1,8 +1,11 @@
 from bark_client import BarkClient, SoundType
+from bark_client.utils import logger
 
 client = BarkClient(domain='api.day.app', key_list=['your key'])
 
 if __name__ == '__main__':
+    logger.info("start")
+
     # Only content
     client.push('Content')
 
