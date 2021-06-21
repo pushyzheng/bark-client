@@ -9,3 +9,7 @@ fh = logging.StreamHandler(stream=sys.stderr)
 fh.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
 fh.setLevel(logging.INFO)
 logger.addHandler(fh)
+
+
+def is_blank(s):
+    return not s or len(s) == 0
